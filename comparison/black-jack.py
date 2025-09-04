@@ -4,6 +4,10 @@ How to play blackjack:    https://bicyclecards.com/how-to-play/blackjack/
 "Standard" playing cards: https://en.wikipedia.org/wiki/Standard_52-card_deck
 """
 
+#Calculate the value of a card
+#You can use the equality comparison operator == to determine if a card is an ace card: card == 'A'.
+#You can use the containment operator in to determine if a substring is contained inside a string: 'Q' in 'KJQ'.
+#You can use the int constructor to convert a str of an int to an int: int('13').
 
 def value_of_card(card):
     """Determine the scoring value of a card.
@@ -15,8 +19,15 @@ def value_of_card(card):
     2.  'A' (ace card) = 1
     3.  '2' - '10' = numerical value.
     """
-
-    pass
+    numerical = ("2","3","4","5","6","7","8","9","10")
+    face_cards = ("J","Q","K")
+    ace_card = "A"
+    if card == ace_card:
+        return 1
+    elif card in face_cards:
+        return 10
+    elif card in numerical: 
+        return int(card)
 
 
 def higher_card(card_one, card_two):
@@ -30,7 +41,14 @@ def higher_card(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    pass
+    value_card_one = value_of_card(card_one)
+    value_card_two = value_of_card(card_two)
+    if value_card_one > value_card_two:
+        return card_one
+    elif value_card_two > value_card_one:
+        return card_two
+    elif value_card_one == value_card_two:
+        return (card_one, card_two)
 
 
 def value_of_ace(card_one, card_two):
