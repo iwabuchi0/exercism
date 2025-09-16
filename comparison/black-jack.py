@@ -4,11 +4,6 @@ How to play blackjack:    https://bicyclecards.com/how-to-play/blackjack/
 "Standard" playing cards: https://en.wikipedia.org/wiki/Standard_52-card_deck
 """
 
-#Calculate the value of a card
-#You can use the equality comparison operator == to determine if a card is an ace card: card == 'A'.
-#You can use the containment operator in to determine if a substring is contained inside a string: 'Q' in 'KJQ'.
-#You can use the int constructor to convert a str of an int to an int: int('13').
-
 def value_of_card(card):
     """Determine the scoring value of a card.
 
