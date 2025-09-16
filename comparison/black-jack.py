@@ -100,7 +100,12 @@ def can_split_pairs(card_one, card_two):
     :return: bool - can the hand be split into two pairs? (i.e. cards are of the same value).
     """
 
-    pass
+    value_card_one = value_of_card(card_one)
+    value_card_two = value_of_card(card_two)
+
+    if value_card_one is value_card_two:
+        return True
+    return False
 
 
 def can_double_down(card_one, card_two):
@@ -109,5 +114,6 @@ def can_double_down(card_one, card_two):
     :param card_one, card_two: str - first and second cards in hand.
     :return: bool - can the hand can be doubled down? (i.e. totals 9, 10 or 11 points).
     """
-
-    pass
+    
+    soma = value_of_card(card_one) + value_of_card(card_two)
+    return soma in (9,10,11)
